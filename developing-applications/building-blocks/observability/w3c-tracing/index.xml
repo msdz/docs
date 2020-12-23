@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dapr Docs – W3C trace context</title><link>https://docs.dapr.io/developing-applications/building-blocks/observability/w3c-tracing/</link><description>Recent content in W3C trace context on Dapr Docs</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.dapr.io/developing-applications/building-blocks/observability/w3c-tracing/index.xml" rel="self" type="application/rss+xml"/><item><title>Developing-Applications: W3C trace context overview</title><link>https://docs.dapr.io/developing-applications/building-blocks/observability/w3c-tracing/w3c-tracing-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/developing-applications/building-blocks/observability/w3c-tracing/w3c-tracing-overview/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dapr 中文文档 – W3C trace context</title><link>https://dapr-cn.github.io/docs/developing-applications/building-blocks/observability/w3c-tracing/</link><description>Recent content in W3C trace context on Dapr 中文文档</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://dapr-cn.github.io/docs/developing-applications/building-blocks/observability/w3c-tracing/index.xml" rel="self" type="application/rss+xml"/><item><title>Developing-Applications: W3C trace context overview</title><link>https://dapr-cn.github.io/docs/developing-applications/building-blocks/observability/w3c-tracing/w3c-tracing-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/developing-applications/building-blocks/observability/w3c-tracing/w3c-tracing-overview/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>Dapr uses W3C trace context for distributed tracing for both service invocation and pub/sub messaging. Largely Dapr does all the heavy lifting of generating and propogating the trace context information and this can be sent to many different diagnostics tools for visualization and querying. There are only a very few cases where you, as a developer, need to either propagate a trace header or generate one.&lt;/p>
 &lt;h2 id="background">Background&lt;/h2>
@@ -40,8 +40,7 @@
 &lt;p>Dapr generates the trace headers in service A and these trace headers are propagated from service A to further Dapr enabled services &lt;code>service A-&amp;gt; service B -&amp;gt; service C&lt;/code>. This is similar to above case 2.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Pub/sub messages
-Dapr generates the trace headers in the published message topic and these trace headers are propagated to any services listening on that topic.&lt;/p>
+&lt;p>Pub/sub messages Dapr generates the trace headers in the published message topic and these trace headers are propagated to any services listening on that topic.&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;h3 id="you-need-to-propagate-or-generate-trace-context-between-services">You need to propagate or generate trace context between services&lt;/h3>
@@ -58,11 +57,10 @@ service A -&amp;gt; service D
 [ .. some code logic ..]
 &lt;/code>&lt;/pre>
 &lt;p>In this case, when service A first calls service B, Dapr generates the trace headers in service A, and these trace headers are then propagated to service B. These trace headers are returned in the response from service B as part of response headers. However you need to propagate the returned trace context to the next services, service C and Service D, as Dapr does not know you want to reuse the same header.&lt;/p>
-&lt;p>To understand how to extract the trace headers from a response and add the trace headers into a request, see the &lt;a href="https://docs.dapr.io/developing-applications/building-blocks/observability/w3c-tracing/">how to use trace context&lt;/a> article.&lt;/p>
+&lt;p>To understand how to extract the trace headers from a response and add the trace headers into a request, see the &lt;a href="https://dapr-cn.github.io/docs/developing-applications/building-blocks/observability/w3c-tracing/">how to use trace context&lt;/a> article.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>You have chosen to generate your own trace context headers.
-This is much more unusual. There may be occassions where you specifically chose to add W3C trace headers into a service call, for example if you have an existing application that does not currently use Dapr. In this case Dapr still propagates the trace context headers for you. If you decide to generate trace headers yourself, there are three ways this can be done :&lt;/p>
+&lt;p>You have chosen to generate your own trace context headers. This is much more unusual. There may be occassions where you specifically chose to add W3C trace headers into a service call, for example if you have an existing application that does not currently use Dapr. In this case Dapr still propagates the trace context headers for you. If you decide to generate trace headers yourself, there are three ways this can be done :&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>You can use the industry standard OpenCensus/OpenTelemetry SDKs to generate trace headers and pass these trace headers to a Dapr enabled service. This is the preferred recommendation.&lt;/p>
@@ -81,8 +79,7 @@ This is much more unusual. There may be occassions where you specifically chose 
 &lt;h3 id="trace-context-http-headers-format">Trace context HTTP headers format&lt;/h3>
 &lt;p>When propogating a trace context header from an HTTP response to an HTTP request, these are the headers that you need to copy.&lt;/p>
 &lt;h4 id="traceparent-header">Traceparent Header&lt;/h4>
-&lt;p>The traceparent header represents the incoming request in a tracing system in a common format, understood by all vendors.
-Here’s an example of a traceparent header.&lt;/p>
+&lt;p>The traceparent header represents the incoming request in a tracing system in a common format, understood by all vendors. Here’s an example of a traceparent header.&lt;/p>
 &lt;p>&lt;code>traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01&lt;/code>&lt;/p>
 &lt;p>The traceparent fields are detailed &lt;a href="https://www.w3.org/TR/trace-context/#traceparent-header">here&lt;/a>&lt;/p>
 &lt;h4 id="tracestate-header">Tracestate Header&lt;/h4>
@@ -93,14 +90,14 @@ Here’s an example of a traceparent header.&lt;/p>
 &lt;p>In the gRPC API calls, trace context is passed through &lt;code>grpc-trace-bin&lt;/code> header.&lt;/p>
 &lt;h2 id="related-links">Related Links&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://docs.dapr.io/operations/monitoring/open-telemetry-collector/">How To set up Application Insights for distributed tracing with OpenTelemetry&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.dapr.io/operations/monitoring/zipkin/">How To set up Zipkin for distributed tracing&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dapr-cn.github.io/docs/operations/monitoring/open-telemetry-collector/">How To set up Application Insights for distributed tracing with OpenTelemetry&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dapr-cn.github.io/docs/operations/monitoring/zipkin/">How To set up Zipkin for distributed tracing&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.w3.org/TR/trace-context/">W3C trace context specification&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/dapr/quickstarts/tree/master/observability">Observability sample&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Developing-Applications: How-To: Use W3C trace context with Dapr</title><link>https://docs.dapr.io/developing-applications/building-blocks/observability/w3c-tracing/w3c-tracing-howto/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/developing-applications/building-blocks/observability/w3c-tracing/w3c-tracing-howto/</guid><description>
+&lt;/ul></description></item><item><title>Developing-Applications: How-To: Use W3C trace context with Dapr</title><link>https://dapr-cn.github.io/docs/developing-applications/building-blocks/observability/w3c-tracing/w3c-tracing-howto/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/developing-applications/building-blocks/observability/w3c-tracing/w3c-tracing-howto/</guid><description>
 &lt;h1 id="how-to-use-trace-context">How to use trace context&lt;/h1>
-&lt;p>Dapr uses W3C trace context for distributed tracing for both service invocation and pub/sub messaging. Dapr does all the heavy lifting of generating and propagating the trace context information and there are very few cases where you need to either propagate or create a trace context. First read scenarios in the &lt;a href="https://docs.dapr.io/developing-applications/building-blocks/observability/w3c-tracing/">W3C distributed tracing&lt;/a> article to understand whether you need to propagate or create a trace context.&lt;/p>
-&lt;p>To view traces, read the &lt;a href="https://docs.dapr.io/developing-applications/building-blocks/observability/tracing/">how to diagnose with tracing&lt;/a> article.&lt;/p>
+&lt;p>Dapr uses W3C trace context for distributed tracing for both service invocation and pub/sub messaging. Dapr does all the heavy lifting of generating and propagating the trace context information and there are very few cases where you need to either propagate or create a trace context. First read scenarios in the &lt;a href="https://dapr-cn.github.io/docs/developing-applications/building-blocks/observability/w3c-tracing/">W3C distributed tracing&lt;/a> article to understand whether you need to propagate or create a trace context.&lt;/p>
+&lt;p>To view traces, read the &lt;a href="https://dapr-cn.github.io/docs/developing-applications/building-blocks/observability/tracing/">how to diagnose with tracing&lt;/a> article.&lt;/p>
 &lt;h2 id="how-to-retrieve-trace-context-from-a-response">How to retrieve trace context from a response&lt;/h2>
 &lt;p>&lt;code>Note: There are no helper methods exposed in Dapr SDKs to propagate and retrieve trace context. You need to use http/gRPC clients to propagate and retrieve trace headers through http headers and gRPC metadata.&lt;/code>&lt;/p>
 &lt;h3 id="retrieve-trace-context-in-go">Retrieve trace context in Go&lt;/h3>
@@ -124,7 +121,7 @@ Here’s an example of a traceparent header.&lt;/p>
 },
 },
 &lt;span style="color:#a6e22e">grpc&lt;/span>.&lt;span style="color:#a6e22e">Header&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>&lt;span style="color:#a6e22e">responseHeader&lt;/span>))
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="retrieve-trace-context-in-c">Retrieve trace context in C#&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="retrieve-trace-context-in-c">Retrieve trace context in C&lt;/h3>
 &lt;h4 id="for-http-calls-1">For HTTP calls&lt;/h4>
 &lt;p>To retrieve the trace context from HTTP response, you can use &lt;a href="https://docs.microsoft.com/en-us/dotnet/api/system.net.http.headers.httpresponseheaders?view=netcore-3.1">.NET API&lt;/a> :&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#75715e">// client is HttpClient. req is HttpRequestMessage
@@ -163,7 +160,7 @@ tracestateValue = values2.FirstOrDefault();
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You can then pass the trace context through &lt;a href="https://google.golang.org/grpc/metadata">gRPC metadata&lt;/a> through &lt;code>grpc-trace-bin&lt;/code> header.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#a6e22e">ctx&lt;/span> = &lt;span style="color:#a6e22e">metadata&lt;/span>.&lt;span style="color:#a6e22e">AppendToOutgoingContext&lt;/span>(&lt;span style="color:#a6e22e">ctx&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;grpc-trace-bin&amp;#34;&lt;/span>, string(&lt;span style="color:#a6e22e">traceContextBinary&lt;/span>))
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You can then continuing passing this go context &lt;code>ctx&lt;/code> in subsequent Dapr gRPC calls as first parameter. For example &lt;code>InvokeService&lt;/code>, context is passed in first parameter.&lt;/p>
-&lt;h3 id="pass-trace-context-in-c">Pass trace context in C#&lt;/h3>
+&lt;h3 id="pass-trace-context-in-c">Pass trace context in C&lt;/h3>
 &lt;h4 id="for-http-calls-3">For HTTP calls&lt;/h4>
 &lt;p>To pass trace context in HTTP request, you can use &lt;a href="https://docs.microsoft.com/en-us/dotnet/api/system.net.http.headers.httprequestheaders?view=netcore-3.1">.NET API&lt;/a> :&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#75715e">// client is HttpClient. req is HttpRequestMessage
@@ -234,12 +231,11 @@ headers.Add(&lt;span style="color:#e6db74">&amp;#34;grpc-trace-bin&amp;#34;&lt;/
 &lt;/code>&lt;/pre>&lt;h3 id="create-trace-context-in-c">Create trace context in C++&lt;/h3>
 &lt;pre>&lt;code class="language-cplusplus" data-lang="cplusplus">opencensus::trace::Span span = opencensus::trace::Span::StartSpan(
 &amp;quot;cache.Get&amp;quot;, nullptr, {&amp;amp;sampler});
-&lt;/code>&lt;/pre>&lt;h3 id="create-trace-context-in-c-1">Create trace context in C#&lt;/h3>
+&lt;/code>&lt;/pre>&lt;h3 id="create-trace-context-in-c-1">Create trace context in C&lt;/h3>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">var&lt;/span> span = tracer.SpanBuilder(&lt;span style="color:#e6db74">&amp;#34;cache.Get&amp;#34;&lt;/span>).StartScopedSpan();
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="putting-it-all-together-with-a-go-sample">Putting it all together with a Go Sample&lt;/h2>
 &lt;h3 id="configure-tracing-in-dapr">Configure tracing in Dapr&lt;/h3>
-&lt;p>First you need to enable tracing configuration in Dapr. This step is mentioned for completeness from enabling tracing to invoking Dapr with trace context.
-Create a deployment config yaml e.g. &lt;code>appconfig.yaml&lt;/code> with following configuration.&lt;/p>
+&lt;p>First you need to enable tracing configuration in Dapr. This step is mentioned for completeness from enabling tracing to invoking Dapr with trace context. Create a deployment config yaml e.g. &lt;code>appconfig.yaml&lt;/code> with following configuration.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#f92672">apiVersion&lt;/span>: &lt;span style="color:#ae81ff">dapr.io/v1alpha1&lt;/span>
 &lt;span style="color:#f92672">kind&lt;/span>: &lt;span style="color:#ae81ff">Configuration&lt;/span>
 &lt;span style="color:#f92672">metadata&lt;/span>:
@@ -249,13 +245,13 @@ Create a deployment config yaml e.g. &lt;code>appconfig.yaml&lt;/code> with foll
 &lt;span style="color:#f92672">samplingRate&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>In Kubernetes, you can apply the configuration as below :&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">kubectl apply -f appconfig.yaml
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>You then set the following tracing annotation in your deployment YAML. You can add the following annotaion in sample &lt;a href="https://docs.dapr.io/operations/configuration/grpc/">grpc app&lt;/a> deployment yaml.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You then set the following tracing annotation in your deployment YAML. You can add the following annotaion in sample &lt;a href="https://dapr-cn.github.io/docs/operations/configuration/grpc/">grpc app&lt;/a> deployment yaml.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#f92672">dapr.io/config&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;appconfig&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="invoking-dapr-with-trace-context">Invoking Dapr with trace context&lt;/h3>
 &lt;p>Dapr covers generating trace context and you do not need to explicitly create trace context.&lt;/p>
 &lt;p>However if you choose to pass the trace context explicitly, then Dapr will use the passed trace context and propagate all across the HTTP/gRPC call.&lt;/p>
-&lt;p>Using the &lt;a href="https://docs.dapr.io/operations/configuration/grpc/">grpc app&lt;/a> in the example and putting this all together, the following steps show you how to create a Dapr client and call the InvokeService method passing the trace context:&lt;/p>
-&lt;p>The Rest code snippet and details, refer to the &lt;a href="https://docs.dapr.io/operations/configuration/grpc/">grpc app&lt;/a>.&lt;/p>
+&lt;p>Using the &lt;a href="https://dapr-cn.github.io/docs/operations/configuration/grpc/">grpc app&lt;/a> in the example and putting this all together, the following steps show you how to create a Dapr client and call the InvokeService method passing the trace context:&lt;/p>
+&lt;p>The Rest code snippet and details, refer to the &lt;a href="https://dapr-cn.github.io/docs/operations/configuration/grpc/">grpc app&lt;/a>.&lt;/p>
 &lt;h3 id="1-import-the-package">1. Import the package&lt;/h3>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-go" data-lang="go">&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
 &lt;span style="color:#f92672">import&lt;/span> (
@@ -297,10 +293,10 @@ Create a deployment config yaml e.g. &lt;code>appconfig.yaml&lt;/code> with foll
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You can now correlate the calls in your app and across services with Dapr using the same trace context.&lt;/p>
 &lt;h2 id="related-links">Related Links&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://docs.dapr.io/concepts/observability-concept/">Observability concepts&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.dapr.io/developing-applications/building-blocks/observability/w3c-tracing/">W3C Trace Context for distributed tracing&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.dapr.io/operations/monitoring/open-telemetry-collector/">How To set up Application Insights for distributed tracing with OpenTelemetry&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://docs.dapr.io/operations/monitoring/zipkin/">How to set up Zipkin for distributed tracing&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dapr-cn.github.io/docs/concepts/observability-concept/">Observability concepts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dapr-cn.github.io/docs/developing-applications/building-blocks/observability/w3c-tracing/">W3C Trace Context for distributed tracing&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dapr-cn.github.io/docs/operations/monitoring/open-telemetry-collector/">How To set up Application Insights for distributed tracing with OpenTelemetry&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dapr-cn.github.io/docs/operations/monitoring/zipkin/">How to set up Zipkin for distributed tracing&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.w3.org/TR/trace-context/">W3C trace context specification&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/dapr/quickstarts/tree/master/observability">Observability quickstart&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>

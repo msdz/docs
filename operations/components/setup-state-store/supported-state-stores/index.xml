@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dapr Docs – Supported stores</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/</link><description>Recent content in Supported stores on Dapr Docs</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/index.xml" rel="self" type="application/rss+xml"/><item><title>Operations: Redis</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-redis/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dapr 中文文档 – Supported stores</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/</link><description>Recent content in Supported stores on Dapr 中文文档</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/index.xml" rel="self" type="application/rss+xml"/><item><title>Operations: Redis</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-redis/</guid><description>
 &lt;h2 id="create-a-redis-store">Create a Redis Store&lt;/h2>
 &lt;p>Dapr can use any Redis instance - containerized, running on your local dev machine, or a managed cloud service. If you already have a Redis store, move on to the &lt;a href="#configuration">Configuration&lt;/a> section.&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">&lt;a class="nav-link active"
@@ -114,13 +114,13 @@ helm install redis bitnami/redis
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h2 id="apply-the-configuration">Apply the configuration&lt;/h2>
 &lt;h3 id="kubernetes">Kubernetes&lt;/h3>
 &lt;pre>&lt;code>kubectl apply -f redis.yaml
 &lt;/code>&lt;/pre>&lt;h3 id="standalone">Standalone&lt;/h3>
-&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: Aerospike</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-aerospike/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-aerospike/</guid><description>
+&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: Aerospike</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-aerospike/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-aerospike/</guid><description>
 &lt;h2 id="setup-aerospike">Setup Aerospike&lt;/h2>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">&lt;a class="nav-link active"
 id="tabs-0-self-hosted-tab" data-toggle="tab" href="#tabs-0-self-hosted" role="tab"
@@ -143,8 +143,7 @@ Kubernetes
 &lt;br />&lt;p>The easiest way to install Aerospike on Kubernetes is by using the &lt;a href="https://github.com/helm/charts/tree/master/stable/aerospike">Helm chart&lt;/a>:&lt;/p>
 &lt;pre>&lt;code>helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
 helm install --name my-aerospike --namespace aerospike stable/aerospike
-&lt;/code>&lt;/pre>&lt;p>This will install Aerospike into the &lt;code>aerospike&lt;/code> namespace.
-To interact with Aerospike, find the service with: &lt;code>kubectl get svc aerospike -n aerospike&lt;/code>.&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>This will install Aerospike into the &lt;code>aerospike&lt;/code> namespace. To interact with Aerospike, find the service with: &lt;code>kubectl get svc aerospike -n aerospike&lt;/code>.&lt;/p>
 &lt;p>For example, if installing using the example above, the Aerospike host address would be:&lt;/p>
 &lt;p>&lt;code>aerospike-my-aerospike.aerospike.svc.cluster.local:3000&lt;/code>&lt;/p>
 &lt;/div>
@@ -170,14 +169,14 @@ To interact with Aerospike, find the service with: &lt;code>kubectl get svc aero
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h2 id="apply-the-configuration">Apply the configuration&lt;/h2>
 &lt;h3 id="in-kubernetes">In Kubernetes&lt;/h3>
 &lt;p>To apply the Aerospike state store to Kubernetes, use the &lt;code>kubectl&lt;/code> CLI:&lt;/p>
 &lt;pre>&lt;code>kubectl apply -f aerospike.yaml
 &lt;/code>&lt;/pre>&lt;h3 id="running-locally">Running locally&lt;/h3>
-&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: Azure Blob Storage</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-azure-blobstorage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-azure-blobstorage/</guid><description>
+&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: Azure Blob Storage</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-azure-blobstorage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-azure-blobstorage/</guid><description>
 &lt;h2 id="creating-azure-storage-account">Creating Azure Storage account&lt;/h2>
 &lt;p>&lt;a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal">Follow the instructions&lt;/a> from the Azure documentation on how to create an Azure Storage Account.&lt;/p>
 &lt;p>If you wish to create a container for Dapr to use, you can do so beforehand. However, Blob Storage state provider will create one for you automatically if it doesn&amp;rsquo;t exist.&lt;/p>
@@ -208,7 +207,7 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h3 id="example">Example&lt;/h3>
 &lt;p>The following example uses the Kubernetes secret store to retrieve the secrets:&lt;/p>
@@ -247,7 +246,7 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;/span>&lt;span style="color:#e6db74"> ]&amp;#39;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>will create the blob file in the containter with key as filename and value as the contents of file.&lt;/p>
 &lt;h2 id="concurrency">Concurrency&lt;/h2>
-&lt;p>Azure Blob Storage state concurrency is achieved by using &lt;code>ETag&lt;/code>s according to &lt;a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-concurrency#managing-concurrency-in-blob-storage">the official documenation&lt;/a>.&lt;/p></description></item><item><title>Operations: Azure Cosmos DB</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-azure-cosmosdb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-azure-cosmosdb/</guid><description>
+&lt;p>Azure Blob Storage state concurrency is achieved by using &lt;code>ETag&lt;/code>s according to &lt;a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-concurrency#managing-concurrency-in-blob-storage">the official documenation&lt;/a>.&lt;/p></description></item><item><title>Operations: Azure Cosmos DB</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-azure-cosmosdb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-azure-cosmosdb/</guid><description>
 &lt;h2 id="create-a-azure-cosmos-db-account">Create a Azure Cosmos DB account&lt;/h2>
 &lt;p>&lt;a href="https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-manage-database-account">Follow the instructions&lt;/a> from the Azure documentation on how to create an Azure CosmosDB account. The database and collection must be created in CosmosDB before Dapr can use it.&lt;/p>
 &lt;p>&lt;strong>Note : The partition key for the collection must be named &amp;ldquo;/partitionKey&amp;rdquo;. Note: this is case-sensitive.&lt;/strong>&lt;/p>
@@ -281,7 +280,7 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h3 id="example">Example&lt;/h3>
 &lt;p>Here is an example of what the values could look like:&lt;/p>
@@ -357,13 +356,11 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;/span>&lt;span style="color:#e6db74"> }
 &lt;/span>&lt;span style="color:#e6db74"> }
 &lt;/span>&lt;span style="color:#e6db74"> ]&amp;#39;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>For &lt;strong>actor&lt;/strong> state operations, the partition key will be generated by Dapr using the appId, the actor type, and the actor id, such that data for the same actor will always end up under the same partition (you do not need to specify it). This is because actor state operations must use transactions, and in Cosmos DB the items in a transaction must be on the same partition.&lt;/p></description></item><item><title>Operations: Azure Table Storage</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-azure-tablestorage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-azure-tablestorage/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>For &lt;strong>actor&lt;/strong> state operations, the partition key will be generated by Dapr using the appId, the actor type, and the actor id, such that data for the same actor will always end up under the same partition (you do not need to specify it). This is because actor state operations must use transactions, and in Cosmos DB the items in a transaction must be on the same partition.&lt;/p></description></item><item><title>Operations: Azure Table Storage</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-azure-tablestorage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-azure-tablestorage/</guid><description>
 &lt;h2 id="create-an-azure-storage-account">Create an Azure Storage account&lt;/h2>
 &lt;p>&lt;a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal">Follow the instructions&lt;/a> from the Azure documentation on how to create an Azure Storage Account.&lt;/p>
 &lt;p>If you wish to create a table for Dapr to use, you can do so beforehand. However, Table Storage state provider will create one for you automatically if it doesn&amp;rsquo;t exist.&lt;/p>
-&lt;p>In order to setup Azure Table Storage as a state store, you will need the following properties:
-&lt;strong>AccountName&lt;/strong>: The storage account name. For example: &lt;strong>mystorageaccount&lt;/strong>.
-&lt;strong>AccountKey&lt;/strong>: Primary or secondary storage key.&lt;/p>
+&lt;p>In order to setup Azure Table Storage as a state store, you will need the following properties: &lt;strong>AccountName&lt;/strong>: The storage account name. For example: &lt;strong>mystorageaccount&lt;/strong>. &lt;strong>AccountKey&lt;/strong>: Primary or secondary storage key.&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>TableName&lt;/strong>: The name of the table to be used for Dapr state. The table will be created for you if it doesn&amp;rsquo;t exist.&lt;/li>
 &lt;/ul>
@@ -388,7 +385,7 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h3 id="example">Example&lt;/h3>
 &lt;p>The following example uses the Kubernetes secret store to retrieve the secrets:&lt;/p>
@@ -445,7 +442,7 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="concurrency">Concurrency&lt;/h2>
-&lt;p>Azure Table Storage state concurrency is achieved by using &lt;code>ETag&lt;/code>s according to &lt;a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-concurrency#managing-concurrency-in-table-storage">the official documenation&lt;/a>.&lt;/p></description></item><item><title>Operations: Cassandra</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-cassandra/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-cassandra/</guid><description>
+&lt;p>Azure Table Storage state concurrency is achieved by using &lt;code>ETag&lt;/code>s according to &lt;a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-concurrency#managing-concurrency-in-table-storage">the official documenation&lt;/a>.&lt;/p></description></item><item><title>Operations: Cassandra</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-cassandra/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-cassandra/</guid><description>
 &lt;h2 id="create-a-cassandra-state-store">Create a Cassandra state store&lt;/h2>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">&lt;a class="nav-link active"
 id="tabs-0-self-hosted-tab" data-toggle="tab" href="#tabs-0-self-hosted" role="tab"
@@ -468,8 +465,7 @@ Kubernetes
 &lt;br />&lt;p>The easiest way to install Cassandra on Kubernetes is by using the &lt;a href="https://github.com/helm/charts/tree/master/incubator/cassandra">Helm chart&lt;/a>:&lt;/p>
 &lt;pre>&lt;code>kubectl create namespace cassandra
 helm install cassandra incubator/cassandra --namespace cassandra
-&lt;/code>&lt;/pre>&lt;p>This will install Cassandra into the &lt;code>cassandra&lt;/code> namespace by default.
-To interact with Cassandra, find the service with: &lt;code>kubectl get svc -n cassandra&lt;/code>.&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>This will install Cassandra into the &lt;code>cassandra&lt;/code> namespace by default. To interact with Cassandra, find the service with: &lt;code>kubectl get svc -n cassandra&lt;/code>.&lt;/p>
 &lt;p>For example, if installing using the example above, the Cassandra DNS would be:&lt;/p>
 &lt;p>&lt;code>cassandra.cassandra.svc.cluster.local&lt;/code>&lt;/p>
 &lt;/div>
@@ -505,7 +501,7 @@ To interact with Cassandra, find the service with: &lt;code>kubectl get svc -n c
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h3 id="example">Example&lt;/h3>
 &lt;p>The following example uses the Kubernetes secret store to retrieve the username and password:&lt;/p>
@@ -534,7 +530,7 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;p>To apply the Cassandra state store to Kubernetes, use the &lt;code>kubectl&lt;/code> CLI:&lt;/p>
 &lt;pre>&lt;code>kubectl apply -f cassandra.yaml
 &lt;/code>&lt;/pre>&lt;h3 id="running-locally">Running locally&lt;/h3>
-&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: Cloudstate</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-cloudstate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-cloudstate/</guid><description>
+&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: Cloudstate</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-cloudstate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-cloudstate/</guid><description>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The Cloudstate-Dapr integration is unique in the sense that it enables developers to achieve high-throughput, low latency scenarios by leveraging Cloudstate running as a sidecar &lt;em>next&lt;/em> to Dapr, keeping the state near the compute unit for optimal performance while providing replication between multiple instances that can be safely scaled up and down. This is due to Cloudstate forming an Akka cluster between its sidecars with replicated in-memory entities.&lt;/p>
 &lt;p>Dapr leverages Cloudstate&amp;rsquo;s CRDT capabilities with last-write-wins semantics.&lt;/p>
@@ -661,7 +657,7 @@ name: cloudstate-pod-reader
 subjects:
 - kind: ServiceAccount
 name: default
-&lt;/code>&lt;/pre></description></item><item><title>Operations: Couchbase</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-couchbase/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-couchbase/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Operations: Couchbase</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-couchbase/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-couchbase/</guid><description>
 &lt;h2 id="create-a-couchbase-state-store">Create a Couchbase state store&lt;/h2>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">&lt;a class="nav-link active"
 id="tabs-0-self-hosted-tab" data-toggle="tab" href="#tabs-0-self-hosted" role="tab"
@@ -710,14 +706,14 @@ helm install couchbase/couchbase-cluster
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h2 id="apply-the-configuration">Apply the configuration&lt;/h2>
 &lt;h3 id="in-kubernetes">In Kubernetes&lt;/h3>
 &lt;p>To apply the Couchbase state store to Kubernetes, use the &lt;code>kubectl&lt;/code> CLI:&lt;/p>
 &lt;pre>&lt;code>kubectl apply -f couchbase.yaml
 &lt;/code>&lt;/pre>&lt;h3 id="running-locally">Running locally&lt;/h3>
-&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: etcd</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-etcd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-etcd/</guid><description>
+&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: etcd</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-etcd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-etcd/</guid><description>
 &lt;h2 id="setup-an-etcd-state-store">Setup an etcd state store&lt;/h2>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">&lt;a class="nav-link active"
 id="tabs-0-self-hosted-tab" data-toggle="tab" href="#tabs-0-self-hosted" role="tab"
@@ -740,8 +736,7 @@ Kubernetes
 &lt;br />&lt;p>The easiest way to install etcd on Kubernetes is by using the &lt;a href="https://github.com/helm/charts/tree/master/incubator/etcd">Helm chart&lt;/a>:&lt;/p>
 &lt;pre>&lt;code>helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
 helm install etcd incubator/etcd
-&lt;/code>&lt;/pre>&lt;p>This will install etcd into the &lt;code>default&lt;/code> namespace.
-To interact with etcd, find the service with: &lt;code>kubectl get svc etcd-etcd&lt;/code>.&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>This will install etcd into the &lt;code>default&lt;/code> namespace. To interact with etcd, find the service with: &lt;code>kubectl get svc etcd-etcd&lt;/code>.&lt;/p>
 &lt;p>For example, if installing using the example above, the etcd host address would be:&lt;/p>
 &lt;p>&lt;code>etcd-etcd.default.svc.cluster.local:2379&lt;/code>&lt;/p>
 &lt;/div>
@@ -767,14 +762,14 @@ To interact with etcd, find the service with: &lt;code>kubectl get svc etcd-etcd
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h2 id="apply-the-configuration">Apply the configuration&lt;/h2>
 &lt;h3 id="in-kubernetes">In Kubernetes&lt;/h3>
 &lt;p>To apply the etcd state store to Kubernetes, use the &lt;code>kubectl&lt;/code> CLI:&lt;/p>
 &lt;pre>&lt;code>kubectl apply -f etcd.yaml
 &lt;/code>&lt;/pre>&lt;h3 id="running-locally">Running locally&lt;/h3>
-&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: GCP Firestore (Datastore mode)</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-firestore/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-firestore/</guid><description>
+&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: GCP Firestore (Datastore mode)</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-firestore/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-firestore/</guid><description>
 &lt;h2 id="setup-a-gcp-firestone-state-store">Setup a GCP Firestone state store&lt;/h2>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">&lt;a class="nav-link active"
 id="tabs-0-self-hosted-tab" data-toggle="tab" href="#tabs-0-self-hosted" role="tab"
@@ -833,14 +828,14 @@ Google Cloud
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h2 id="apply-the-configuration">Apply the configuration&lt;/h2>
 &lt;h3 id="in-kubernetes">In Kubernetes&lt;/h3>
 &lt;p>To apply the Firestore state store to Kubernetes, use the &lt;code>kubectl&lt;/code> CLI:&lt;/p>
 &lt;pre>&lt;code>kubectl apply -f firestore.yaml
 &lt;/code>&lt;/pre>&lt;h3 id="running-locally">Running locally&lt;/h3>
-&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: HashiCorp Consul</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-consul/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-consul/</guid><description>
+&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: HashiCorp Consul</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-consul/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-consul/</guid><description>
 &lt;h2 id="setup-a-hashicorp-consul-state-store">Setup a HashiCorp Consul state store&lt;/h2>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">&lt;a class="nav-link active"
 id="tabs-0-self-hosted-tab" data-toggle="tab" href="#tabs-0-self-hosted" role="tab"
@@ -862,8 +857,7 @@ Kubernetes
 &lt;div class="tab-pane fade" id="tabs-0-kubernetes" role="tabpanel" aria-labelled-by="tabs-0-kubernetes-tab">
 &lt;br />&lt;p>The easiest way to install Consul on Kubernetes is by using the &lt;a href="https://github.com/helm/charts/tree/master/stable/consul">Helm chart&lt;/a>:&lt;/p>
 &lt;pre>&lt;code>helm install consul stable/consul
-&lt;/code>&lt;/pre>&lt;p>This will install Consul into the &lt;code>default&lt;/code> namespace.
-To interact with Consul, find the service with: &lt;code>kubectl get svc consul&lt;/code>.&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>This will install Consul into the &lt;code>default&lt;/code> namespace. To interact with Consul, find the service with: &lt;code>kubectl get svc consul&lt;/code>.&lt;/p>
 &lt;p>For example, if installing using the example above, the Consul host address would be:&lt;/p>
 &lt;p>&lt;code>consul.default.svc.cluster.local:8500&lt;/code>&lt;/p>
 &lt;/div>
@@ -893,7 +887,7 @@ To interact with Consul, find the service with: &lt;code>kubectl get svc consul&
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h3 id="example">Example&lt;/h3>
 &lt;p>The following example uses the Kubernetes secret store to retrieve the acl token:&lt;/p>
@@ -920,7 +914,7 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;p>To apply the Consul state store to Kubernetes, use the &lt;code>kubectl&lt;/code> CLI:&lt;/p>
 &lt;pre>&lt;code>kubectl apply -f consul.yaml
 &lt;/code>&lt;/pre>&lt;h3 id="running-locally">Running locally&lt;/h3>
-&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: Hazelcast</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-hazelcast/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-hazelcast/</guid><description>
+&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: Hazelcast</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-hazelcast/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-hazelcast/</guid><description>
 &lt;h2 id="setup-a-hazelcast-state-store">Setup a Hazelcast state store&lt;/h2>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">&lt;a class="nav-link active"
 id="tabs-0-self-hosted-tab" data-toggle="tab" href="#tabs-0-self-hosted" role="tab"
@@ -962,14 +956,14 @@ Kubernetes
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h2 id="apply-the-configuration">Apply the configuration&lt;/h2>
 &lt;h3 id="in-kubernetes">In Kubernetes&lt;/h3>
 &lt;p>To apply the Hazelcast state store to Kubernetes, use the &lt;code>kubectl&lt;/code> CLI:&lt;/p>
 &lt;pre>&lt;code>kubectl apply -f hazelcast.yaml
 &lt;/code>&lt;/pre>&lt;h3 id="running-locally">Running locally&lt;/h3>
-&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: Memcached</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-memcached/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-memcached/</guid><description>
+&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: Memcached</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-memcached/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-memcached/</guid><description>
 &lt;h2 id="setup-a-memcached-state-store">Setup a Memcached state store&lt;/h2>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">&lt;a class="nav-link active"
 id="tabs-0-self-hosted-tab" data-toggle="tab" href="#tabs-0-self-hosted" role="tab"
@@ -991,8 +985,7 @@ Kubernetes
 &lt;div class="tab-pane fade" id="tabs-0-kubernetes" role="tabpanel" aria-labelled-by="tabs-0-kubernetes-tab">
 &lt;br />&lt;p>The easiest way to install Memcached on Kubernetes is by using the &lt;a href="https://github.com/helm/charts/tree/master/stable/memcached">Helm chart&lt;/a>:&lt;/p>
 &lt;pre>&lt;code>helm install memcached stable/memcached
-&lt;/code>&lt;/pre>&lt;p>This will install Memcached into the &lt;code>default&lt;/code> namespace.
-To interact with Memcached, find the service with: &lt;code>kubectl get svc memcached&lt;/code>.&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>This will install Memcached into the &lt;code>default&lt;/code> namespace. To interact with Memcached, find the service with: &lt;code>kubectl get svc memcached&lt;/code>.&lt;/p>
 &lt;p>For example, if installing using the example above, the Memcached host address would be:&lt;/p>
 &lt;p>&lt;code>memcached.default.svc.cluster.local:11211&lt;/code>&lt;/p>
 &lt;/div>
@@ -1018,14 +1011,14 @@ To interact with Memcached, find the service with: &lt;code>kubectl get svc memc
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h2 id="apply-the-configuration">Apply the configuration&lt;/h2>
 &lt;h3 id="in-kubernetes">In Kubernetes&lt;/h3>
 &lt;p>To apply the Memcached state store to Kubernetes, use the &lt;code>kubectl&lt;/code> CLI:&lt;/p>
 &lt;pre>&lt;code>kubectl apply -f memcached.yaml
 &lt;/code>&lt;/pre>&lt;h3 id="running-locally">Running locally&lt;/h3>
-&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: MongoDB</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-mongodb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-mongodb/</guid><description>
+&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: MongoDB</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-mongodb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-mongodb/</guid><description>
 &lt;h2 id="setup-a-mongodb-state-store">Setup a MongoDB state store&lt;/h2>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">&lt;a class="nav-link active"
 id="tabs-0-self-hosted-tab" data-toggle="tab" href="#tabs-0-self-hosted" role="tab"
@@ -1047,12 +1040,10 @@ Kubernetes
 &lt;div class="tab-pane fade" id="tabs-0-kubernetes" role="tabpanel" aria-labelled-by="tabs-0-kubernetes-tab">
 &lt;br />&lt;p>The easiest way to install MongoDB on Kubernetes is by using the &lt;a href="https://github.com/helm/charts/tree/master/stable/mongodb">Helm chart&lt;/a>:&lt;/p>
 &lt;pre>&lt;code>helm install mongo stable/mongodb
-&lt;/code>&lt;/pre>&lt;p>This will install MongoDB into the &lt;code>default&lt;/code> namespace.
-To interact with MongoDB, find the service with: &lt;code>kubectl get svc mongo-mongodb&lt;/code>.&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>This will install MongoDB into the &lt;code>default&lt;/code> namespace. To interact with MongoDB, find the service with: &lt;code>kubectl get svc mongo-mongodb&lt;/code>.&lt;/p>
 &lt;p>For example, if installing using the example above, the MongoDB host address would be:&lt;/p>
 &lt;p>&lt;code>mongo-mongodb.default.svc.cluster.local:27017&lt;/code>&lt;/p>
-&lt;p>Follow the on-screen instructions to get the root password for MongoDB.
-The username will be &lt;code>admin&lt;/code> by default.&lt;/p>
+&lt;p>Follow the on-screen instructions to get the root password for MongoDB. The username will be &lt;code>admin&lt;/code> by default.&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;h2 id="create-a-dapr-component">Create a Dapr component&lt;/h2>
@@ -1086,7 +1077,7 @@ The username will be &lt;code>admin&lt;/code> by default.&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h3 id="example">Example&lt;/h3>
 &lt;p>The following example uses the Kubernetes secret store to retrieve the username and password:&lt;/p>
@@ -1115,7 +1106,7 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;p>To apply the MondoDB state store to Kubernetes, use the &lt;code>kubectl&lt;/code> CLI:&lt;/p>
 &lt;pre>&lt;code>kubectl apply -f mongodb.yaml
 &lt;/code>&lt;/pre>&lt;h3 id="running-locally">Running locally&lt;/h3>
-&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: PostgreSQL</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-postgresql/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-postgresql/</guid><description>
+&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: PostgreSQL</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-postgresql/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-postgresql/</guid><description>
 &lt;h2 id="create-a-postgresql-store">Create a PostgreSQL Store&lt;/h2>
 &lt;p>Dapr can use any PostgreSQL instance. If you already have a running instance of PostgreSQL, move on to the &lt;a href="#create-a-dapr-component">Create a Dapr component&lt;/a> section.&lt;/p>
 &lt;ol>
@@ -1125,8 +1116,7 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">docker run -p 5432:5432 -e POSTGRES_PASSWORD&lt;span style="color:#f92672">=&lt;/span>example postgres
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
-&lt;p>Create a database for state data.
-Either the default &amp;ldquo;postgres&amp;rdquo; database can be used, or create a new database for storing state data.&lt;/p>
+&lt;p>Create a database for state data. Either the default &amp;ldquo;postgres&amp;rdquo; database can be used, or create a new database for storing state data.&lt;/p>
 &lt;p>To create a new database in PostgreSQL, run the following SQL command:&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-SQL" data-lang="SQL">&lt;span style="color:#66d9ef">create&lt;/span> &lt;span style="color:#66d9ef">database&lt;/span> dapr_test
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
@@ -1149,14 +1139,14 @@ Either the default &amp;ldquo;postgres&amp;rdquo; database can be used, or creat
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h2 id="apply-the-configuration">Apply the configuration&lt;/h2>
 &lt;h3 id="in-kubernetes">In Kubernetes&lt;/h3>
 &lt;p>To apply the PostgreSQL state store to Kubernetes, use the &lt;code>kubectl&lt;/code> CLI:&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#ae81ff">kubectl apply -f postgres.yaml&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="running-locally">Running locally&lt;/h3>
-&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: RethinkDB</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-rethinkdb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-rethinkdb/</guid><description>
+&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: RethinkDB</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-rethinkdb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-rethinkdb/</guid><description>
 &lt;h2 id="setup-rethinkdb-state-store">Setup RethinkDB state store&lt;/h2>
 &lt;p>You can run &lt;a href="https://rethinkdb.com/">RethinkDB&lt;/a> locally using Docker:&lt;/p>
 &lt;pre>&lt;code>docker run --name rethinkdb -v &amp;quot;$PWD:/rethinkdb-data&amp;quot; -d rethinkdb:latest
@@ -1189,10 +1179,10 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;p>RethinkDB state store supports transactions so it can be used to persist Dapr Actor state. By default, the state will be stored in table name &lt;code>daprstate&lt;/code> in the specified database.&lt;/p>
-&lt;p>Additionally, if the optional &lt;code>archive&lt;/code> metadata is set to &lt;code>true&lt;/code>, on each state change, the RethinkDB state store will also log state changes with timestamp in the &lt;code>daprstate_archive&lt;/code> table. This allows for time series analyses of the state managed by Dapr.&lt;/p></description></item><item><title>Operations: SQL Server</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-sqlserver/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-sqlserver/</guid><description>
+&lt;p>Additionally, if the optional &lt;code>archive&lt;/code> metadata is set to &lt;code>true&lt;/code>, on each state change, the RethinkDB state store will also log state changes with timestamp in the &lt;code>daprstate_archive&lt;/code> table. This allows for time series analyses of the state managed by Dapr.&lt;/p></description></item><item><title>Operations: SQL Server</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-sqlserver/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-sqlserver/</guid><description>
 &lt;h2 id="create-an-azure-sql-instance">Create an Azure SQL instance&lt;/h2>
 &lt;p>&lt;a href="https://docs.microsoft.com/azure/sql-database/sql-database-single-database-get-started?tabs=azure-portal">Follow the instructions&lt;/a> from the Azure documentation on how to create a SQL database. The database must be created before Dapr consumes it.&lt;/p>
 &lt;p>&lt;strong>Note: SQL Server state store also supports SQL Server running on VMs.&lt;/strong>&lt;/p>
@@ -1231,7 +1221,7 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h3 id="example">Example&lt;/h3>
 &lt;p>The following example uses the Kubernetes secret store to retrieve the secrets:&lt;/p>
@@ -1255,7 +1245,7 @@ The above example uses secrets as plain strings. It is recommended to use a secr
 &lt;p>To apply the SQL Server state store to Kubernetes, use the &lt;code>kubectl&lt;/code> CLI:&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#ae81ff">kubectl apply -f sqlserver.yaml&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="running-locally">Running locally&lt;/h3>
-&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: Zookeeper</title><link>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-zookeeper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.dapr.io/operations/components/setup-state-store/supported-state-stores/setup-zookeeper/</guid><description>
+&lt;p>To run locally, create a &lt;code>components&lt;/code> dir containing the YAML file and provide the path to the &lt;code>dapr run&lt;/code> command with the flag &lt;code>--components-path&lt;/code>.&lt;/p></description></item><item><title>Operations: Zookeeper</title><link>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-zookeeper/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dapr-cn.github.io/docs/operations/components/setup-state-store/supported-state-stores/setup-zookeeper/</guid><description>
 &lt;h2 id="setup-a-zookeeper-state-store">Setup a Zookeeper state store&lt;/h2>
 &lt;ul class="nav nav-tabs" id="tabs-0" role="tablist">&lt;li class="nav-item">&lt;a class="nav-link active"
 id="tabs-0-self-hosted-tab" data-toggle="tab" href="#tabs-0-self-hosted" role="tab"
@@ -1278,8 +1268,7 @@ Kubernetes
 &lt;br />&lt;p>The easiest way to install Zookeeper on Kubernetes is by using the &lt;a href="https://github.com/helm/charts/tree/master/incubator/zookeeper">Helm chart&lt;/a>:&lt;/p>
 &lt;pre>&lt;code>helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
 helm install zookeeper incubator/zookeeper
-&lt;/code>&lt;/pre>&lt;p>This will install Zookeeper into the &lt;code>default&lt;/code> namespace.
-To interact with Zookeeper, find the service with: &lt;code>kubectl get svc zookeeper&lt;/code>.&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>This will install Zookeeper into the &lt;code>default&lt;/code> namespace. To interact with Zookeeper, find the service with: &lt;code>kubectl get svc zookeeper&lt;/code>.&lt;/p>
 &lt;p>For example, if installing using the example above, the Zookeeper host address would be:&lt;/p>
 &lt;p>&lt;code>zookeeper.default.svc.cluster.local:2181&lt;/code>&lt;/p>
 &lt;/div>
@@ -1309,7 +1298,7 @@ To interact with Zookeeper, find the service with: &lt;code>kubectl get svc zook
 &lt;/code>&lt;/pre>&lt;/div>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Warning&lt;/h4>
-The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://docs.dapr.io/operations/components/component-secrets/">here&lt;/a>.
+The above example uses secrets as plain strings. It is recommended to use a secret store for the secrets as described &lt;a href="https://dapr-cn.github.io/docs/operations/components/component-secrets/">here&lt;/a>.
 &lt;/div>
 &lt;h2 id="apply-the-configuration">Apply the configuration&lt;/h2>
 &lt;h3 id="in-kubernetes">In Kubernetes&lt;/h3>
